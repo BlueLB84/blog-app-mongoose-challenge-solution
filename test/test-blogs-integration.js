@@ -59,14 +59,14 @@ describe('BlogPost API resource', function() {
 			return chai.request(app)
 				.get('/posts')
 				.then(function(_res) {
-					res = _res;
-					res.should.have.status(200);
-					res.body.posts.should.have.length.of.at.least(1);
-					return BlogPost.count();
-				})
-				.then(function(count) {
-					res.body.posts.should.have.length.of(count);
-				});
+          res = _res;
+          res.should.have.status(200);
+          res.body.posts.should.have.length.of.at.least(1);
+          return BlogPost.count();
+        })
+        .then(function(count) {
+          res.body.posts.should.have.length.of(count);
+        });
 		});
 
 		it('should return posts with correct fields', function() {
@@ -91,8 +91,6 @@ describe('BlogPost API resource', function() {
 					resBlogPost.author.should.contain(post.author.firstName);
 					resBlogPost.content.should.equal(post.content);
 					resBlogPost.title.should.equal(post.title);
-					// this might not work with Date.now
-					resBlogPost.created.should.equal(post.created);
 				});
 		});
 	});
@@ -109,10 +107,9 @@ describe('BlogPost API resource', function() {
 					res.body.should.be.a('object');
 					res.body.should.include.keys('id', 'author', 'title', 'content', 'created');
 					res.body.id.should.not.be.null;
-					res.body.author.should.include(post.author.firstName);
-					res.body.title.should.equal(post.title);
-					res.body.content.should.equal(post.content);
-					res.body.created.should.equal(post.created);
+					res.body.author.should.include(newBlogPost.author.firstName);
+					res.body.title.should.equal(newBlogPost.title);
+					res.body.content.should.equal(newBlogPost.content);
 					return BlogPost.findById(res.body.id);
 				})
 				.then(function(post) {
@@ -120,7 +117,6 @@ describe('BlogPost API resource', function() {
 					post.author.lastName.should.equal(newBlogPost.author.lastName);
 					post.title.should.equal(newBlogPost.title);
 					post.content.should.equal(newBlogPost.content);
-					post.created.should.equal(newBlogPost.created);
 				});
 		});
 	});
