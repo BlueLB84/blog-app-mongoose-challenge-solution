@@ -55,22 +55,22 @@ describe('BlogPost API resource', function() {
 
 	describe('GET endpoint', function() {
 
-    it('should return all existing posts', function() {
-      let res;
-      return chai.request(app)
-        .get('/posts')
-        .then(_res => {
-          res = _res;
-          res.should.have.status(200);
-          // otherwise our db seeding didn't work
-          res.body.should.have.length.of.at.least(1);
-
-          return BlogPost.count();
-        })
-        .then(count => {
-          res.body.should.have.length.of(count);
-        });
-    });
+		it('should return all existing posts', function() {
+		  let res;
+		  return chai.request(app)
+		    .get('/posts')
+		    .then(function(_res) {
+		      // so subsequent .then blocks can access resp obj.
+		      res = _res;
+		      res.should.have.status(200);
+		      // otherwise our db seeding didn't work
+		      res.body.should.have.length.of.at.least(1);
+		      return BlogPost.count();
+		    })
+		    .then(function(count) {
+		      return res.body.should.have.length.of(count);
+		    });
+		});
 
 		it('should return posts with correct fields', function() {
 			let resBlogPost;
