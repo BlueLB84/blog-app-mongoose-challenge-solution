@@ -17,7 +17,6 @@ app.get('/posts', (req, res) => {
   BlogPost
     .find()
     .then(posts => {
-      .then(posts => {
       res.json(posts.map(post => post.apiRepr()));
     })
     .catch(
