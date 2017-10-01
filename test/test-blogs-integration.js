@@ -69,7 +69,7 @@ describe('BlogPost API resource', function() {
 		      return BlogPost.count();
 		    })
 		    .then(function(count) {
-		      return res.body.should.have.length.of(count);
+		      return res.body.should.have.lengthOf(count);
 		    });
 		});
 
