@@ -6,6 +6,6 @@ deploy:
   provider: heroku
   api_key:
     secure: bjdUa5XSF7bPln0KHhh7V3kBBg+tc2iKgp3T3D8vqkwPR/XWauXeMeckfFWwSBfm7eFReMgFFkeegnRMKEV6Hpj6iodIOdjdkwSfV+/dEg8bUcL3ziB/dFiXOERwfNeGD7O3izpZrvrZXKFnzn+a27c68OKUvZkaHJwHyoMoBbUkuYRUP6+yw0GQvGQRPcoWiaQBhayt6kXxrEqMQTJCVTrfscUDbme9lf64IAAWuGfO0i3dVPvvx3JODYqixTchMn4hbaqNp8OUkjKkPD9hD/zZUyzb0zzaTeu7oj9OlQzwpqyTFaz+GVQNeKokY+W/+k9onoMNSJOEMJKiPzL8xgXr9Yu12r8WYeT0/BhO0/t6PBi/cZxGfifl4E6mEVyJJSgZkfWG7DFCqSz1g1K7GBaWJAzwxJ21IwkF6Evlh6AiQ2kX7dN6zQJvXDoPYTGSPuz/a5ZkXYkijm4fiVUllRBfZ3evprm5BSYtyIqzyU+HrfC/ZwAJJx7+QQ+Ys5Jgg1g/HvrVdQM9KEvdj8iHb33qtmctRHzsYm7hFbQQG8swraKpat3+Ae4Zpc2PZUxIZON5Qj5DR4251ycLBSUVd11U/YK/SqKWKuT7QvWCHz3NnswAbFKPypVYoq82OBDy3Kth+Ur1Cbt/61tiX7ef36MlTYraMb/iKp+m+Qf1qsg=
-  app: blog-app-mongoose-challenge-solution
+  app: still-wildwood-52822
   on:
     repo: BlueLB84/blog-app-mongoose-challenge-solution
